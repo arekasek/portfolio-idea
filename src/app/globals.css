@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+@keyframes slowBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+/* styles/globals.css */
+.snap-container {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
+.snap-start {
+  scroll-snap-align: start;
+}
+
+.animate-slow-bounce {
+  animation: slowBounce 1.2s ease-in-out infinite;
+}
+@font-face {
+  font-family: "Thunder";
+  src: url("../app/fonts/Thunder-BoldLC.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+.thunder {
+  font-family: Thunder;
+}
+.section {
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.section-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
